@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Titanic Survival Prediction</title>
+</head>
+
+<body bgcolor='black' text='white'>
+    <h1>
+        <b>
+            <i>
+                <font size=15>
+                    Titanic Survival Prediction
+                </font>
+            </i>
+        </b>
+    </h1>
+    <div style="background-color:white">
+        <hr>
+        <hr>
+    </div>
+    <h2> Enter the details to check survival prediction!</h2>
+    <h4>
+        <img src="https://hibar-research.org/wp-content/uploads/2019/11/placeholder-300x200.jpeg"
+            style="float: right; width: 50%; margin-left: 1%; margin-bottom: 0.5em;">
+
+        <form action="{{url_for('predict')}}" method="post">
+            <p> Passenger Class (Pclass): <input type='text' name='Pclass' placeholder='Enter passenger class' required='required' />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age: <input type='text' name='Age' placeholder='Enter age' required='required' /></p>
+            <p> Fare: <input type='text' name='Fare' placeholder='Enter fare' required='required'/></p>
+            <p> Number of Parents/Children Aboard (Parch): <input type='text' name='Parch' placeholder='Enter Parch' required='required' /></p>
+            <p> Number of Siblings/Spouses Aboard (SibSp): <input type='text' name='SibSp' placeholder='Enter SibSp' required='required' /></p>
+            <p> SexIndex: <input type='text' name='SexIndex' placeholder='Enter 0 for female 1 for male' required='required' /></p>
+            <p> Port of Embarkation (EmbarkedIndex): <input type='text' name='EmbarkedIndex' placeholder='Enter port index' required='required' /></p>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </h4>
+    <h2>
+        <b>
+            {{ prediction_text }}
+        </b>
+    </h2>
+</body>
+</html>
